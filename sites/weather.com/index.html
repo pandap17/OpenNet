@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather.com</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .location {
+      margin-bottom: 20px;
+    }
+
+    .location label {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .location input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .location button {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .unit {
+      margin-bottom: 20px;
+    }
+
+    .unit label {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .unit select {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #f7f7f7;
+      color: #333;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab:hover {
+      background-color: #ddd;
+    }
+
+    .tab.active {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: left;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .weather-heading {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .weather-data {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .weather-data-item {
+      width: 200px;
+      padding: 10px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .weather-data-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .weather-date {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .weather-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .weather-info {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .weather-info p {
+      margin: 5px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather.com</h1>
+
+    <div class="location">
+      <label for="locationInput">Location:</label>
+      <input type="text" id="locationInput" placeholder="Enter location">
+      <button onclick="searchWeather()">Search</button>
+    </div>
+
+    <div class="unit">
+      <label for="unitSelect">Temperature Unit:</label>
+      <select id="unitSelect" onchange="changeUnit()">
+        <option value="c">Celsius</option>
+        <option value="f">Fahrenheit</option>
+      </select>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" id="temperatureTab" onclick="openTab('temperature')">Temperature</button>
+      <button class="tab" id="precipitationTab" onclick="openTab('precipitation')">Precipitation</button>
+      <button class="tab" id="windTab" onclick="openTab('wind')">Wind</button>
+    </div>
+
+    <div class="tab-content active" id="temperatureContent">
+      <h2 class="weather-heading">Temperature</h2>
+      <div class="weather-data" id="temperatureData"></div>
+    </div>
+
+    <div class="tab-content" id="precipitationContent">
+      <h2 class="weather-heading">Precipitation</h2>
+      <div class="weather-data" id="precipitationData"></div>
+    </div>
+
+    <div class="tab-content" id="windContent">
+      <h2 class="weather-heading">Wind</h2>
+      <div class="weather-data" id="windData"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      var apiKey = "f11c4911519b468fa1150340231506";
+      var unit = "c";
+
+      function searchWeather() {
+        var locationInput = document.getElementById("locationInput").value;
+        if (!locationInput) return;
+
+        axios
+          .get(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${locationInput}&days=3`)
+          .then(response => {
+            var forecast = response.data.forecast.forecastday;
+
+            displayTemperatureData(forecast);
+            displayPrecipitationData(forecast);
+            displayWindData(forecast);
+          })
+          .catch(error => {
+            console.log(error);
+            document.getElementById("temperatureData").innerHTML = "An error occurred while fetching weather data.";
+          });
+      }
+
+      function changeUnit() {
+        unit = document.getElementById("unitSelect").value;
+        searchWeather();
+      }
+
+      function displayTemperatureData(forecast) {
+        var temperatureDataContainer = document.getElementById("temperatureData");
+        temperatureDataContainer.innerHTML = "";
+
+        forecast.forEach(day => {
+          var date = day.date;
+          var maxTemp = unit === "c" ? day.day.maxtemp_c : day.day.maxtemp_f;
+          var minTemp = unit === "c" ? day.day.mintemp_c : day.day.mintemp_f;
+          var humidity = day.day.avghumidity;
+
+          var tempElement = document.createElement("div");
+          tempElement.classList.add("weather-data-item");
+          tempElement.innerHTML = `
+            <div class="weather-date">${date}</div>
+            <div class="weather-icon">
+              <img src="https:${day.day.condition.icon}" alt="Weather Icon">
+            </div>
+            <div class="weather-info">
+              <p>Max: ${maxTemp}&deg;${unit.toUpperCase()}</p>
+              <p>Min: ${minTemp}&deg;${unit.toUpperCase()}</p>
+              <p>Humidity: ${humidity}%</p>
+            </div>
+          `;
+
+          temperatureDataContainer.appendChild(tempElement);
+        });
+      }
+
+      function displayPrecipitationData(forecast) {
+        var precipitationDataContainer = document.getElementById("precipitationData");
+        precipitationDataContainer.innerHTML = "";
+
+        forecast.forEach(day => {
+          var date = day.date;
+          var precipitation = day.day.totalprecip_mm;
+
+          var precipElement = document.createElement("div");
+          precipElement.classList.add("weather-data-item");
+          precipElement.innerHTML = `
+            <div class="weather-date">${date}</div>
+            <div class="weather-icon">
+              <img src="https:${day.day.condition.icon}" alt="Weather Icon">
+            </div>
+            <div class="weather-info">
+              <p>Precipitation: ${precipitation} mm</p>
+            </div>
+          `;
+
+          precipitationDataContainer.appendChild(precipElement);
+        });
+      }
+
+      function displayWindData(forecast) {
+        var windDataContainer = document.getElementById("windData");
+        windDataContainer.innerHTML = "";
+
+        forecast.forEach(day => {
+          var date = day.date;
+          var windSpeed = unit === "c" ? day.day.maxwind_kph : day.day.maxwind_mph;
+          var windDirection = day.day.wind_dir;
+
+          var windElement = document.createElement("div");
+          windElement.classList.add("weather-data-item");
+          windElement.innerHTML = `
+            <div class="weather-date">${date}</div>
+            <div class="weather-icon">
+              <img src="https:${day.day.condition.icon}" alt="Weather Icon">
+            </div>
+            <div class="weather-info">
+              <p>Wind Speed: ${windSpeed} ${unit === "c" ? "kph" : "mph"}</p>
+              <p>Wind Direction: ${windDirection}</p>
+            </div>
+          `;
+
+          windDataContainer.appendChild(windElement);
+        });
+      }
+
+      function openTab(tabName) {
+        var tabs = document.getElementsByClassName("tab");
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove("active");
+        }
+
+        var tabContents = document.getElementsByClassName("tab-content");
+        for (var j = 0; j < tabContents.length; j++) {
+          tabContents[j].classList.remove("active");
+        }
+
+        var selectedTab = document.getElementById(tabName + "Tab");
+        var selectedTabContent = document.getElementById(tabName + "Content");
+        selectedTab.classList.add("active");
+        selectedTabContent.classList.add("active");
+      }
+    </script>
+  </div>
+</body>
+</html>
