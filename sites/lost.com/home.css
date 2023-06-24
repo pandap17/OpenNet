@@ -1,0 +1,15 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url('https://i.imgur.com/Qokgt5A.jpg');
+}
+.home-div {
+  width: 580px;
+  height: 330px;
+}
