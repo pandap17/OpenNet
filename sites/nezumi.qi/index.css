@@ -1,0 +1,136 @@
+body[id=home] {
+    background: black;
+    color: white;
+}
+
+div[id=sitenav] {
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-family: monospace;
+    margin-top: 40px;
+}
+
+div[id=sitenav] a {
+    width: 50px;
+    margin: 50px;
+    background-color: gray;
+    letter-spacing: 3px;
+}
+
+div[id=sitenav] a span {
+    color: black;
+    transition: .5s;
+}
+
+div[id=sitenav] a span:hover {
+    background-color: blue;
+    transition: .5s;
+}
+
+input[type=text] {
+    width: 99%;
+    padding: 10px;
+    height: 100px;
+    text-align: center;
+    font-size: 3vw;
+    color: white;
+    background-color: blue;
+    font-family: monospace;
+    border: 0;
+    outline: 0;
+    margin-top: 135px;
+}
+
+input[type=text]:focus {
+    outline:none!important;
+}
+
+div[id=description] {
+    max-width: 1080px;
+    margin: auto;
+    font-size: 25px;
+    font-family: monospace;
+    margin-top: 100px;
+    line-height: 45px;
+}
+
+div[id=description] p span {
+    box-shadow: -4px 4px 0px #222222;
+}
+
+div[id=link-header] {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 120px;
+}
+
+div[id=link-header] span {
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-family: monospace;
+    font-style: italic;
+    text-shadow: 0.2em 0.5em 0.1em rgb(100, 9, 27),
+    -0.3em 0.1em 0.1em rgb(0, 87, 87),
+    0.4em -0.3em 0.1em rgb(20, 96, 173);
+}
+
+div[id=links] {
+    letter-spacing: 3px;
+    font-size: 25px;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 30px;
+}
+
+div[id=links] span[id=mstdn] {
+    background-color: dodgerblue;
+    color:white;
+    transition: .5s;
+}
+
+div[id=links] span[id=mstdn]:hover {
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+div[id=links] span[id=yt] {
+    background-color: crimson;
+    color:white;
+    transition: .5s;
+}
+
+div[id=links] span[id=yt]:hover {
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+div[id=links] span[id=bc] {
+    background-color: darkcyan;
+    color:white;
+    transition: .5s;
+}
+
+div[id=links] span[id=bc]:hover {
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+div[id=footer] {
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: darkgray;
+    text-align: center;
+    background-color: black;
+}
