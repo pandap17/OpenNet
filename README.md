@@ -40,7 +40,7 @@ To update your site on the OpenNet, follow these steps:
 
 1. Ensure your forked repository is up-to-date with the current repository. Any changes to sites that don't have you in the `creator.txt` file will result in your pull request being dismissed.
 2. Make the necessary changes to your website's code in your forked repository.
-3. Ensure that the changes only affect your site and do not modify other sites unless you have permission as the creator.
+3. Ensure that the changes only affect your site and do not modify other sites unless you have permission in the creator.txt.
 4. Submit a pull request with the updated code.
 
 ## Contributing a Browser
