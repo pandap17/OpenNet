@@ -1,6 +1,6 @@
 # OpenNet
 
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/PandaP17/openscratch/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/PandaP17/opennet/blob/master/LICENSE)
 
 The OpenNet is an independent, open-source ecosystem alternative to the typical internet, where any user can create and host their own site entirely for free, with no ifs, buts, or ands. Say goodbye to domain registrars and costly hosting services — on the OpenNet, creating a website is as simple as submitting a pull request with your site's code.
 
