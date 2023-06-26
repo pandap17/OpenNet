@@ -67,7 +67,7 @@ The OpenNet is released under the GNU General Public License v3.0. Please see th
 
 ## Contributing
 
-We welcome contributions to the OpenNet! Feel free to submit pull requests with enhancements or new features. Please ensure that your contributions align with our guidelines and adhere to the code of conduct.
+We welcome contributions to the OpenNet! Feel free to submit pull requests with enhancements or new features. Please ensure that your contributions align with common sense and don't destroy anything.
 
 ## Contact
 
