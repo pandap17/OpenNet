@@ -4,9 +4,7 @@
 
 The OpenNet is an independent, open-source ecosystem alternative to the typical internet, where any user can create and host their own site entirely for free, with no ifs, buts, or ands. Say goodbye to domain registrars and costly hosting services — on the OpenNet, creating a website is as simple as submitting a pull request with your site's code.
 
-## Getting Started
-
-### Creating a Site
+## Creating a Site
 
 To create a site on the OpenNet, follow these steps:
 
@@ -30,7 +28,7 @@ To create a site on the OpenNet, follow these steps:
 
 8. Once your site is ready, submit a pull request to have it added to the OpenNet.
 
-### Updating a Site
+## Updating a Site
 
 To update your site on the OpenNet, follow these steps:
 
@@ -38,6 +36,17 @@ To update your site on the OpenNet, follow these steps:
 2. Make the necessary changes to your website's code in your forked repository.
 3. Ensure that the changes only affect your site and do not modify other sites unless you have permission as the creator.
 4. Submit a pull request with the updated code.
+
+## Contributing a Browser
+
+To contribute a browser to the OpenNet, follow these steps:
+
+1. Fork this repository to your GitHub account.
+2. Create a new folder in the `/browsers/` directory of your forked repository. Name the folder after the browser you are adding (e.g., `/browsers/chromium/`).
+3. Add the necessary files for the browser, including the browser's executable, libraries, or any other required resources.
+4. In the main directory of the browser folder, create an `info.txt` file to provide compatibility information about the browser. Describe what it is compatible with and any additional details you find relevant.\
+5. Submit a pull request with the browser folder to have it added to the OpenNet repo.
+
 
 ## Structure of the OpenNet
 
