@@ -10,8 +10,6 @@ To access and browse the OpenNet easily and properly, it is recommended to use a
 
 OpenNet browsers are available in the `/browsers/` directory of this repository. To get started, simply go into the folder, find a browser you want that's compatible with your system, and download it. To contribute your own browser to the OpenNet, follow the instructions in the "Contributing a Browser" section.
 
-Using an OpenNet browser allows you to fully experience the decentralized and collaborative nature of the OpenNet, where users can create, host, and explore websites freely.
-
 ## Creating a Site
 
 To create a site on the OpenNet, follow these steps:
