@@ -1,24 +1,16 @@
 # Temprano Public Beta Release v0.1
-# This is not complete. It's filled with unoptimized stuff and bugs.
-# --------------------------------------------------------------------------------
+# This is not complete. It's full of bugs and unoptimized stuff.
+
 import os
 import shutil
 import webview
 from git import Repo
-import tkinter as tk
-from tkinter import simpledialog
-import screeninfo
-import time
-
 
 # GitHub repository URL
 repo_url = 'https://github.com/pandap17/OpenNet'
 
 # Path to the cache folder where sites will be downloaded
 cache_folder = './cache/'
-
-# Store the site history
-site_history = []
 
 def clone_repository():
     # Create the cache folder if it doesn't exist
@@ -57,58 +49,25 @@ def download_site(site, repo_path):
     return site_cache_folder
 
 def open_site(site_folder, site_name):
-    index_html_file = os.path.join(site_folder, 'index.html')
-    index_htm_file = os.path.join(site_folder, 'index.htm')
+    index_file = os.path.join(site_folder, 'index.html')
 
-    # Get screen resolution
-    screen_info = screeninfo.get_monitors()[0]
-    screen_width = screen_info.width
-    screen_height = screen_info.height
-
-    # Check if index.html file exists, otherwise check for index.htm file
-    if os.path.exists(index_html_file):
-        webview.create_window(site_name, url=index_html_file, confirm_close=False, width=screen_width,
-                              height=screen_height, resizable=True)
-    elif os.path.exists(index_htm_file):
-        webview.create_window(site_name, url=index_htm_file, confirm_close=False, width=screen_width,
-                              height=screen_height, resizable=True)
-    else:
-        print(f"No index.html or index.htm file found in the site folder: {site_folder}")
-        return
-
-    # Handle webview events for keyboard shortcuts
-    def on_key_press(window, key):
-        if key == webview.WEBVIEW_KEY_BACK:
-            if len(site_history) > 1:
-                site_history.pop()
-                previous_site_folder = site_history[-1]
-                open_site(previous_site_folder, site_name)
-            else:
-                print("No previous site to go back to.")
-        elif key == webview.WEBVIEW_KEY_FORWARD:
-            print("Forward not implemented.")
-
-    webview.set_on_key_press(on_key_press)
+    # Create a webview window to display the HTML file with the site name as the window title
+    webview.create_window(site_name, url=index_file, confirm_close=True)
     webview.start()
-
 
 def main():
     repo_path = clone_repository()
 
-    root = tk.Tk()
-    root.withdraw()
-
     while True:
-        site = simpledialog.askstring("Enter Site", "Please enter a site (or 'exit' to quit):")
-        if site is None or site.lower() == 'exit':
+        site = input("Enter a site (or 'exit' to quit): ")
+
+        if site == 'exit':
             break
 
         site_folder = download_site(site, repo_path)
 
         if site_folder:
-            site_history.append(site_folder)
             open_site(site_folder, site)
-
 
 if __name__ == '__main__':
     main()
