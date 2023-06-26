@@ -14,7 +14,7 @@ OpenNet browsers are available in the `/browsers/` directory of this repository.
 
 To create a site on the OpenNet, follow these steps:
 
-1. Fork this repository to your GitHub account.
+1. Fork this repository to your GitHub account. Ensure your forked repository is up-to-date with the current repository. Any changes to sites that don't have you in the creator.txt file will result in your pull request being dismissed.
 2. Create a new folder in the `/sites/` directory of your forked repository. This folder will serve as the main directory for your site.
 3. Name your site. It's heavily recommended you name it with the format of `site.extension` (e.g. `zephyr.com`, `weather.com`, `blooky.net`). Your extension can be anything, just don't make it too long.
 4. Add your website's HTML, CSS, and any other necessary files to the folder you created.
