@@ -5,6 +5,9 @@ import os
 import shutil
 import webview
 from git import Repo
+import tkinter as tk
+from tkinter import simpledialog
+import screeninfo
 
 # GitHub repository URL
 repo_url = 'https://github.com/pandap17/OpenNet'
@@ -51,17 +54,24 @@ def download_site(site, repo_path):
 def open_site(site_folder, site_name):
     index_file = os.path.join(site_folder, 'index.html')
 
+    # Get screen resolution
+    screen_info = screeninfo.get_monitors()[0]
+    screen_width = screen_info.width
+    screen_height = screen_info.height
+
     # Create a webview window to display the HTML file with the site name as the window title
-    webview.create_window(site_name, url=index_file, confirm_close=True)
+    webview.create_window(site_name, url=index_file, confirm_close=False, width=screen_width, height=screen_height, resizable=True)
     webview.start()
 
 def main():
     repo_path = clone_repository()
 
-    while True:
-        site = input("Enter a site (or 'exit' to quit): ")
+    root = tk.Tk()
+    root.withdraw()
 
-        if site == 'exit':
+    while True:
+        site = simpledialog.askstring("Enter Site", "Please enter a site (or 'exit' to quit):")
+        if site is None or site.lower() == 'exit':
             break
 
         site_folder = download_site(site, repo_path)
