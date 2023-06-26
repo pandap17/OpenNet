@@ -42,7 +42,7 @@ To update your site on the OpenNet, follow these steps:
 To contribute a browser to the OpenNet, follow these steps:
 
 1. Fork this repository to your GitHub account.
-2. Create a new folder in the `/browsers/` directory of your forked repository. Name the folder after the browser you are adding (e.g., `/browsers/chromium/`).
+2. Create a new folder in the `/browsers/` directory of your forked repository. Name the folder after the browser you are adding, with it's compatible systems after it (e.g., `/browsers/chromium (Windows, Linux, MacOS)/`).
 3. Add the necessary files for the browser, including the browser's executable, libraries, or any other required resources.
 4. In the main directory of the browser folder, create an `info.txt` file to provide compatibility information about the browser. Describe what it is compatible with and any additional details you find relevant.\
 5. Submit a pull request with the browser folder to have it added to the OpenNet repo.
