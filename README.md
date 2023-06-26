@@ -4,6 +4,14 @@
 
 The OpenNet is an independent, open-source ecosystem alternative to the typical internet, where any user can create and host their own site entirely for free, with no ifs, buts, or ands. Say goodbye to domain registrars and costly hosting services — on the OpenNet, creating a website is as simple as submitting a pull request with your site's code.
 
+## How is it accessible?
+
+To access and browse the OpenNet easily and properly, it is recommended to use an OpenNet browser. OpenNet browsers are specifically designed to provide the best experience for navigating websites within the OpenNet ecosystem, and allow for navigating websites with their actual domain names.
+
+OpenNet browsers are available in the `/browsers/` directory of this repository. To get started, simply go into the folder, find a browser you want that's compatible with your system, and download it. To contribute your own browser to the OpenNet, follow the instructions in the "Contributing a Browser" section.
+
+Using an OpenNet browser allows you to fully experience the decentralized and collaborative nature of the OpenNet, where users can create, host, and explore websites freely.
+
 ## Creating a Site
 
 To create a site on the OpenNet, follow these steps:
