@@ -16,8 +16,11 @@ fetch('https://api.github.com/repos/pandap17/OpenNet/contents/sites/opentube.com
                 videoPlayer.play();
             };
 
-            // Add the video link to the video list
-            videoList.appendChild(videoLink);
-            videoList.appendChild(document.createElement('br'));
+            // Create a div element to wrap the video link
+            const videoItem = document.createElement('div');
+            videoItem.appendChild(videoLink);
+
+            // Add the wrapped video link to the video list
+            videoList.appendChild(videoItem);
         });
     });
