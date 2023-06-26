@@ -1,0 +1,7 @@
+To contribute a browser, submit a pull request with your browser added to this directory with the following format:
+
+/browsers/yourbrowsername (Compatible Systems)/
+
+e.g.:
+
+/browsers/chromium (Windows, Linux, MacOS)
