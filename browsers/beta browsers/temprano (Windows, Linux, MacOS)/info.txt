@@ -1,5 +1,0 @@
-TEMPRANO OPENNET BROWSER
-Public Beta Release v0.1
-
-Compatible with anything capable of running Python 3+ and Webview.
-THIS IS FULL OF BUGS! It's recommened you only use this for testing purposes!
