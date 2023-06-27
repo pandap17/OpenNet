@@ -61,6 +61,11 @@ To contribute a browser to the OpenNet, follow these steps:
 - The OpenNet is open-source and completely free.
 - There are no domain registrars or costs involved. Creating a site is totally free and only requires a GitHub account and a pull request.
 
+## Documentation
+
+Documentation for the OpenNet can be found over at the OpenNet wiki on Miraheze:
+https://opennet.miraheze.org/wiki/Main_Page
+
 ## License
 
 The OpenNet is released under the GNU General Public License v3.0. Please see the [LICENSE](LICENSE) file for more details.
