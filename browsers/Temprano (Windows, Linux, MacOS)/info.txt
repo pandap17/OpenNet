@@ -1,0 +1,9 @@
+TEMPRANO OPENNET BROWSER
+Public Beta Release v0.2
+
+!!! BEST COMPATIBLE WITH PYTHON 3.7.9 !!!
+!!! INSTALL REQUIREMENTS.TXT WITH PIP !!!
+(python3.7 -m pip install -r requirements.txt)
+(Run that command inside of the directory of Temprano.py)
+
+Temprano runs on Chromium. Certain sites may not work properly.
