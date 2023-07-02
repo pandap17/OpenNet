@@ -12,27 +12,7 @@ OpenNet browsers are available in the `/browsers/` directory of this repository.
 
 ## Creating a Site
 
-To create a site on the OpenNet, follow these steps:
-
-1. Fork this repository to your GitHub account. Ensure your forked repository is up-to-date with the current repository. Any changes to sites that don't have you in the creator.txt file will result in your pull request being dismissed.
-2. Create a new folder in the `/sites/` directory of your forked repository. This folder will serve as the main directory for your site.
-3. Name your site. It's heavily recommended you name it with the format of `site.extension` (e.g. `zephyr.com`, `weather.com`, `blooky.net`). Your extension can be anything, just don't make it too long.
-4. Add your website's HTML, CSS, and any other necessary files to the folder you created.
-5. In the main directory of your site, create a file named `creator.txt`. This file will serve as your "identification", so that in future pull requests, it can be verified that you have proper permission to change the site you're submitting. If you would like to allow other individuals to edit your site too, make sure to include them as allowed editors.
-
-    ```
-    Created by (username)
-    Allowed editors:
-    (Usernames here)
-    ```
-
-   Without a `creator.txt` file, any pull request modifying your site will be accepted, which can pose security risks.
-
-   ***It is heavily recommended you create a creator.txt file.***
-
-7. Optionally, you can include an `info.txt` file in your main site folder to provide basic information about your site that search engines can use to describe it.
-
-8. Once your site is ready, submit a pull request to have it added to the OpenNet.
+To create a site on the OpenNet, refer to the "[Creating a site](https://github.com/pandap17/OpenNet/wiki/Creating-A-Site)" page on the Wiki.
 
 ## Updating a Site
 
@@ -60,11 +40,12 @@ To contribute a browser to the OpenNet, follow these steps:
 - Sites can be submitted and edited through pull requests by anyone.
 - The OpenNet is open-source and completely free.
 - There are no domain registrars or costs involved. Creating a site is totally free and only requires a GitHub account and a pull request.
+- More information regarding the OpenNet's structure can be found on the [wiki page.](https://github.com/pandap17/OpenNet/wiki/Structure-Of-The-OpenNet)
 
 ## Documentation
 
-Documentation for the OpenNet can be found over at the OpenNet wiki on Miraheze:
-https://opennet.miraheze.org/wiki/Main_Page
+Documentation for the OpenNet can be found over on the OpenNet wiki:
+https://github.com/pandap17/OpenNet/wiki/Structure-Of-The-OpenNet
 
 ## License
 
